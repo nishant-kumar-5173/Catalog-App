@@ -49,7 +49,11 @@ class CatalogItem extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                catalog.name.text.lg.bold.color(MyTheme.darkBluishColor).make(),
+                catalog.name.text.lg.bold
+                    .color(
+                      context.theme.floatingActionButtonTheme.backgroundColor,
+                    )
+                    .make(),
                 catalog.desc.text.textStyle(context.captionStyle).make(),
                 10.heightBox,
                 OverflowBar(
@@ -64,15 +68,18 @@ class CatalogItem extends StatelessWidget {
                         ),
                         shape: WidgetStateProperty.all(StadiumBorder()),
                       ),
-                      child: "Buy".text.color(MyTheme.creamColor).bold.make(),
+                      child: "Add to cart".text
+                          .color(MyTheme.creamColor)
+                          .bold
+                          .make(),
                     ),
                   ],
-                ).pOnly(right: 8.0),
+                ).pOnly(right: 8.0, top: 8.0),
               ],
-            ),
+            ).pOnly(top: 16.0, right: 8.0),
           ),
         ],
       ),
-    ).white.roundedLg.make().py(16);
+    ).color(context.cardColor).roundedLg.make().py(16);
   }
 }

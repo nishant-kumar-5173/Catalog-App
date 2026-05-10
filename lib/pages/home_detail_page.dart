@@ -12,11 +12,11 @@ class HomeDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
-      backgroundColor: MyTheme.creamColor,
+      appBar: AppBar(backgroundColor: Colors.transparent),
+      backgroundColor: context.canvasColor,
       bottomNavigationBar: SafeArea(
         child: Container(
-          color: Colors.white,
+          color: context.cardColor,
           child: OverflowBar(
             alignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -29,8 +29,8 @@ class HomeDetailPage extends StatelessWidget {
                   ),
                   shape: WidgetStateProperty.all(StadiumBorder()),
                 ),
-                child: "Buy".text.color(MyTheme.creamColor).bold.make(),
-              ).wh(100, 50),
+                child: "Add to cart".text.color(MyTheme.creamColor).bold.make(),
+              ).wh(120, 50),
             ],
           ).p32(),
         ),
@@ -49,7 +49,7 @@ class HomeDetailPage extends StatelessWidget {
                 edge: VxEdge.top,
                 child: Container(
                   width: context.screenWidth,
-                  color: Colors.white,
+                  color: context.cardColor,
                   child: Column(
                     children: [
                       catalog.name.text.bold.xl4
